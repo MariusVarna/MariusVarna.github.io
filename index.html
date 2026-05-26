@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marius Varna — Portfolio</title>
+<meta name="description" content="Software Systems student at KTU. Full-stack intern at Eneba. Building things that matter, one commit at a time."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Geist:wght@400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary": "#1000a9",
+                        "secondary-container": "#00cbe6",
+                        "on-secondary": "#00363e",
+                        "on-surface-variant": "#c7c4d7",
+                        "tertiary-fixed-dim": "#ffafd3",
+                        "on-primary-fixed": "#07006c",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "primary-container": "#8083ff",
+                        "secondary-fixed": "#a2eeff",
+                        "on-tertiary-fixed": "#3d0026",
+                        "primary": "#c0c1ff",
+                        "surface-container": "#171f33",
+                        "on-error": "#690005",
+                        "surface-bright": "#31394d",
+                        "inverse-surface": "#dae2fd",
+                        "background": "#0b1326",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "surface-container-highest": "#2d3449",
+                        "on-surface": "#dae2fd",
+                        "surface-tint": "#c0c1ff",
+                        "inverse-primary": "#494bd6",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-primary-container": "#0d0096",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#00515d",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-container-low": "#131b2e",
+                        "on-background": "#dae2fd",
+                        "inverse-on-surface": "#283044",
+                        "surface": "#0b1326",
+                        "outline": "#908fa0",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#001f25",
+                        "outline-variant": "#464554",
+                        "surface-variant": "#2d3449",
+                        "on-tertiary-container": "#560038",
+                        "tertiary-fixed": "#ffd8e7",
+                        "secondary": "#5de6ff",
+                        "surface-dim": "#0b1326",
+                        "tertiary-container": "#e364a7",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary": "#ffafd3",
+                        "on-tertiary": "#620040",
+                        "on-tertiary-fixed-variant": "#85145a",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#222a3d"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "container-max": "1280px",
+                        "section-padding": "120px",
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Sora"],
+                        "code-md": ["Space Mono"],
+                        "headline-lg-mobile": ["Sora"],
+                        "label-sm": ["Space Mono"],
+                        "display-lg": ["Sora"],
+                        "headline-md": ["Sora"],
+                        "body-md": ["Geist"],
+                        "body-lg": ["Geist"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "code-md": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "headline-lg-mobile": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "label-sm": ["12px", { lineHeight: "1", letterSpacing: "0.1em", fontWeight: "500" }],
+                        "display-lg": ["72px", { lineHeight: "1.1", letterSpacing: "-0.04em", fontWeight: "800" }],
+                        "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }]
+                    },
+                    animation: {
+                        'load-bar': 'loadBar 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+                        'marquee': 'marquee 25s linear infinite',
+                        'float-1': 'float 6s ease-in-out infinite',
+                        'float-2': 'float 8s ease-in-out infinite 1s',
+                        'float-3': 'float 7s ease-in-out infinite 2s',
+                        'float-4': 'float 9s ease-in-out infinite 0.5s',
+                        'flicker': 'flicker 4s linear infinite',
+                    },
+                    keyframes: {
+                        loadBar: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        flicker: {
+                            '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': { 
+                                opacity: '1', textShadow: '0 0 10px rgba(192,193,255,0.8), 0 0 20px rgba(192,193,255,0.4)' 
+                            },
+                            '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': { 
+                                opacity: '0.4', textShadow: 'none' 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        :root {
+            --mouse-x: 0deg;
+            --mouse-y: 0deg;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .interactive-bg, .particles {
+                display: none !important;
+            }
+        }
+
+        .material-symbols-outlined {
+            overflow: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            border-right: 1px solid rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        }
+        
+        .interactive-bg {
+            position: absolute;
+            inset: -20%;
+            width: 140%;
+            height: 140%;
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateX(var(--mouse-y)) rotateY(var(--mouse-x));
+            transition: transform 0.1s ease-out;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .ambient-glow {
+            position: absolute;
+            width: 60vw;
+            height: 60vh;
+            background: radial-gradient(circle, rgba(128, 131, 255, 0.15) 0%, rgba(11, 19, 38, 0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particles canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .scanlines {
+            position: relative;
+        }
+        .scanlines::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .glitch-link {
+            position: relative;
+        }
+        .glitch-link::before,
+        .glitch-link::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .glitch-link:hover::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+            opacity: 1;
+        }
+        .glitch-link:hover::after {
+            left: -2px;
+            text-shadow: -2px 0 #00fff9;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 2s infinite linear alternate-reverse;
+            opacity: 1;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(27px, 9999px, 86px, 0); }
+            20% { clip: rect(69px, 9999px, 14px, 0); }
+            40% { clip: rect(10px, 9999px, 54px, 0); }
+            60% { clip: rect(54px, 9999px, 20px, 0); }
+            80% { clip: rect(42px, 9999px, 91px, 0); }
+            100% { clip: rect(72px, 9999px, 43px, 0); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip: rect(17px, 9999px, 94px, 0); }
+            20% { clip: rect(5px, 9999px, 34px, 0); }
+            40% { clip: rect(89px, 9999px, 76px, 0); }
+            60% { clip: rect(23px, 9999px, 11px, 0); }
+            80% { clip: rect(65px, 9999px, 45px, 0); }
+            100% { clip: rect(43px, 9999px, 66px, 0); }
+        }
+
+        .laser-btn {
+            position: relative;
+            background: rgba(11, 19, 38, 0.8);
+            border: 1px solid rgba(93, 230, 255, 0.3);
+            box-shadow: inset 0 0 20px rgba(93, 230, 255, 0), 0 0 20px rgba(93, 230, 255, 0);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .laser-btn::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #5de6ff, #c0c1ff, #5de6ff);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .laser-btn:hover {
+            border-color: transparent;
+            box-shadow: inset 0 0 20px rgba(93, 230, 255, 0.5), 0 0 40px rgba(93, 230, 255, 0.6);
+            transform: translateY(-2px);
+        }
+        .laser-btn:hover::before {
+            opacity: 1;
+            animation: borderGlow 2s linear infinite;
+        }
+        
+        @keyframes borderGlow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-content {
+            display: inline-block;
+            width: max-content;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Loading Bar -->
+<div class="fixed top-0 left-0 h-1 bg-secondary z-[60] w-full origin-left animate-load-bar shadow-[0_0_10px_#5de6ff]"></div>
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-surface-container/70 backdrop-blur-xl border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-20">
+<a href="#hero" class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface">
+                Marius Varna
+            </a>
+<div class="hidden md:flex items-center gap-8 font-code-md text-code-md">
+<a class="nav-link glitch-link text-on-surface-variant hover:text-primary transition-colors duration-200" data-text="Projects" href="#projects">Projects</a>
+<a class="nav-link glitch-link text-on-surface-variant hover:text-primary transition-colors duration-200" data-text="Stack" href="#stack">Stack</a>
+<a class="nav-link glitch-link text-on-surface-variant hover:text-primary transition-colors duration-200" data-text="Writing" href="#writing">Writing</a>
+<a class="nav-link glitch-link text-on-surface-variant hover:text-primary transition-colors duration-200" data-text="About" href="#about">About</a>
+</div>
+<div class="flex items-center gap-4">
+
+<a href="mailto:mariusvarna7@gmail.com" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm hover:bg-primary transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(128,131,255,0.4)] hover:shadow-[0_0_25px_rgba(128,131,255,0.8)]">
+                    Hire Me
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow relative w-full overflow-hidden" id="main-canvas">
+<!-- Background Elements -->
+<div class="absolute inset-0 z-0 overflow-hidden perspective-[1000px]">
+<div class="interactive-bg"></div>
+<div class="ambient-glow"></div>
+<div class="particles" id="particles-js"></div>
+</div>
+<!-- Hero Section -->
+<section id="hero" class="relative z-10 w-full pt-32 pb-section-padding px-margin-mobile md:px-gutter flex flex-col items-center justify-center text-center min-h-[819px]">
+<div class="max-w-4xl mx-auto space-y-8 flex flex-col items-center">
+<!-- Status Tag -->
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-secondary/40 bg-secondary/10 font-label-sm text-label-sm text-secondary shadow-[0_0_15px_rgba(93,230,255,0.2)]">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse" style="box-shadow: 0 0 10px #5de6ff, 0 0 20px #5de6ff;"></span>
+                    AVAILABLE FOR COLLABORATION
+                </div>
+<!-- Headline -->
+<h1 class="font-display-lg text-display-lg text-on-surface max-md:font-headline-lg-mobile max-md:text-headline-lg-mobile relative scanlines inline-block px-4">
+                    Student. <br/>
+<span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary animate-flicker block mt-2 relative z-10">Developer. Engineer.</span>
+</h1>
+<!-- Subheadline -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto drop-shadow-md">
+                    Software Systems student at Kaunas University of Technology. Full-stack intern at Eneba. Building things that matter, one commit at a time.
+                </p>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row items-center gap-6 pt-8">
+<a href="#stack" class="laser-btn text-primary px-8 py-4 rounded-DEFAULT font-label-sm text-label-sm flex items-center gap-2 group">
+<span class="relative z-10 font-bold tracking-wider">VIEW MY WORK</span>
+<span class="material-symbols-outlined text-[16px] relative z-10 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+
+</div>
+</div>
+</section>
+<!-- Trusted By Strip -->
+<section class="relative z-10 w-full border-y border-white/5 bg-surface/50 backdrop-blur-md py-12">
+<div class="max-w-container-max mx-auto flex flex-col items-center space-y-8">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest px-margin-mobile">Integrating Modern Ecosystems</p>
+<div class="w-full marquee-container">
+<div class="marquee-content animate-marquee flex items-center gap-24 opacity-70 hover:opacity-100 transition-opacity duration-300">
+<!-- First set -->
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface animate-float-1">
+<span class="material-symbols-outlined text-4xl text-primary drop-shadow-[0_0_8px_rgba(192,193,255,0.5)]">terminal</span>
+<span class="font-bold">TypeScript</span>
+</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface animate-float-2">
+<span class="material-symbols-outlined text-4xl text-secondary drop-shadow-[0_0_8px_rgba(93,230,255,0.5)]">code_blocks</span>
+<span class="font-bold">React</span>
+</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface animate-float-3">
+<span class="material-symbols-outlined text-4xl text-tertiary drop-shadow-[0_0_8px_rgba(255,175,211,0.5)]">api</span>
+<span class="font-bold">Express</span>
+</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface animate-float-4">
+<span class="material-symbols-outlined text-4xl text-primary drop-shadow-[0_0_8px_rgba(192,193,255,0.5)]">bolt</span>
+<span class="font-bold">FastAPI</span>
+</div>
+<!-- Duplicate set for seamless marquee -->
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface animate-float-1">
+<span class="material-symbols-outlined text-4xl text-primary drop-shadow-[0_0_8px_rgba(192,193,255,0.5)]">terminal</span>
+<span class="font-bold">TypeScript</span>
+</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface animate-float-2">
+<span class="material-symbols-outlined text-4xl text-secondary drop-shadow-[0_0_8px_rgba(93,230,255,0.5)]">code_blocks</span>
+<span class="font-bold">React</span>
+</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface animate-float-3">
+<span class="material-symbols-outlined text-4xl text-tertiary drop-shadow-[0_0_8px_rgba(255,175,211,0.5)]">api</span>
+<span class="font-bold">Express</span>
+</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface animate-float-4">
+<span class="material-symbols-outlined text-4xl text-primary drop-shadow-[0_0_8px_rgba(192,193,255,0.5)]">bolt</span>
+<span class="font-bold">FastAPI</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="relative z-10 w-full py-section-padding px-margin-mobile md:px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 space-y-4">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">/ 01</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Featured Projects</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Real projects are being built. For now, here's where they'll live once they ship.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<!-- Project Card 1 -->
+<a href="https://github.com/MariusVarna" target="_blank" class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 block">
+<div class="flex items-start justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">construction</span>
+</div>
+<span class="font-code-md text-code-md text-secondary bg-secondary/10 px-3 py-1 rounded-DEFAULT">Coming Soon</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Project 01</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Something cool is in the works. Check back soon or follow my GitHub for updates.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-code-md text-code-md text-primary bg-primary/10 px-3 py-1 rounded-DEFAULT">???</span>
+<span class="font-code-md text-code-md text-secondary bg-secondary/10 px-3 py-1 rounded-DEFAULT">???</span>
+<span class="font-code-md text-code-md text-tertiary bg-tertiary/10 px-3 py-1 rounded-DEFAULT">???</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-sm text-label-sm text-primary transition-colors flex items-center gap-1 group/link">
+<span>View on GitHub</span>
+<span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-0.5 transition-transform">arrow_forward</span>
+</span>
+</div>
+</a>
+<!-- Project Card 2 -->
+<a href="https://github.com/MariusVarna" target="_blank" class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 block">
+<div class="flex items-start justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container">construction</span>
+</div>
+<span class="font-code-md text-code-md text-secondary bg-secondary/10 px-3 py-1 rounded-DEFAULT">Coming Soon</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Project 02</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Something cool is in the works. Check back soon or follow my GitHub for updates.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-code-md text-code-md text-primary bg-primary/10 px-3 py-1 rounded-DEFAULT">???</span>
+<span class="font-code-md text-code-md text-secondary bg-secondary/10 px-3 py-1 rounded-DEFAULT">???</span>
+<span class="font-code-md text-code-md text-tertiary bg-tertiary/10 px-3 py-1 rounded-DEFAULT">???</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-sm text-label-sm text-primary transition-colors flex items-center gap-1 group/link">
+<span>View on GitHub</span>
+<span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-0.5 transition-transform">arrow_forward</span>
+</span>
+</div>
+</a>
+<!-- Project Card 3 -->
+<a href="https://github.com/MariusVarna" target="_blank" class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 block">
+<div class="flex items-start justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-container">construction</span>
+</div>
+<span class="font-code-md text-code-md text-secondary bg-secondary/10 px-3 py-1 rounded-DEFAULT">Coming Soon</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Project 03</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Something cool is in the works. Check back soon or follow my GitHub for updates.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-code-md text-code-md text-primary bg-primary/10 px-3 py-1 rounded-DEFAULT">???</span>
+<span class="font-code-md text-code-md text-secondary bg-secondary/10 px-3 py-1 rounded-DEFAULT">???</span>
+<span class="font-code-md text-code-md text-tertiary bg-tertiary/10 px-3 py-1 rounded-DEFAULT">???</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-sm text-label-sm text-primary transition-colors flex items-center gap-1 group/link">
+<span>View on GitHub</span>
+<span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-0.5 transition-transform">arrow_forward</span>
+</span>
+</div>
+</a>
+<!-- Project Card 4 -->
+<a href="https://github.com/MariusVarna" target="_blank" class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 block">
+<div class="flex items-start justify-between mb-6">
+<div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">construction</span>
+</div>
+<span class="font-code-md text-code-md text-secondary bg-secondary/10 px-3 py-1 rounded-DEFAULT">Coming Soon</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Project 04</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Something cool is in the works. Check back soon or follow my GitHub for updates.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-code-md text-code-md text-primary bg-primary/10 px-3 py-1 rounded-DEFAULT">???</span>
+<span class="font-code-md text-code-md text-secondary bg-secondary/10 px-3 py-1 rounded-DEFAULT">???</span>
+<span class="font-code-md text-code-md text-tertiary bg-tertiary/10 px-3 py-1 rounded-DEFAULT">???</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-sm text-label-sm text-primary transition-colors flex items-center gap-1 group/link">
+<span>View on GitHub</span>
+<span class="material-symbols-outlined text-[14px] group-hover/link:translate-x-0.5 transition-transform">arrow_forward</span>
+</span>
+</div>
+</a>
+</div>
+<div class="text-center mt-12">
+<a href="https://github.com/MariusVarna" target="_blank" class="laser-btn text-primary px-8 py-3 rounded-DEFAULT font-label-sm text-label-sm inline-flex items-center gap-2 group">
+<span class="relative z-10">View All on GitHub</span>
+<span class="material-symbols-outlined text-[16px] relative z-10 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Stack Section -->
+<section id="stack" class="relative z-10 w-full py-section-padding px-margin-mobile md:px-gutter border-t border-white/5">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 space-y-4">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">/ 02</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Tech Stack</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">The tools and technologies I reach for to ship reliable, performant software.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<!-- Frontend -->
+<div class="glass-panel rounded-xl p-6 md:p-8">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">code</span>
+</div>
+<h3 class="font-headline-md text-[22px] text-on-surface">Frontend</h3>
+</div>
+<div class="space-y-4">
+<div><div class="flex justify-between mb-1"><span class="font-code-md text-code-md text-on-surface">TypeScript</span><span class="font-code-md text-code-md text-primary">85%</span></div><div class="h-1.5 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full w-[85%]"></div></div></div>
+<div><div class="flex justify-between mb-1"><span class="font-code-md text-code-md text-on-surface">JavaScript</span><span class="font-code-md text-code-md text-primary">80%</span></div><div class="h-1.5 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full w-[80%]"></div></div></div>
+<div><div class="flex justify-between mb-1"><span class="font-code-md text-code-md text-on-surface">React</span><span class="font-code-md text-code-md text-primary">75%</span></div><div class="h-1.5 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full w-[75%]"></div></div></div>
+</div>
+</div>
+<!-- Backend -->
+<div class="glass-panel rounded-xl p-6 md:p-8">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">dns</span>
+</div>
+<h3 class="font-headline-md text-[22px] text-on-surface">Backend</h3>
+</div>
+<div class="space-y-4">
+<div><div class="flex justify-between mb-1"><span class="font-code-md text-code-md text-on-surface">Express</span><span class="font-code-md text-code-md text-secondary">80%</span></div><div class="h-1.5 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full w-[80%]"></div></div></div>
+<div><div class="flex justify-between mb-1"><span class="font-code-md text-code-md text-on-surface">FastAPI</span><span class="font-code-md text-code-md text-secondary">75%</span></div><div class="h-1.5 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full w-[75%]"></div></div></div>
+<div><div class="flex justify-between mb-1"><span class="font-code-md text-code-md text-on-surface">Symfony</span><span class="font-code-md text-code-md text-secondary">70%</span></div><div class="h-1.5 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full w-[70%]"></div></div></div>
+</div>
+</div>
+<!-- ML / Tools -->
+<div class="glass-panel rounded-xl p-6 md:p-8">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-tertiary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">neurology</span>
+</div>
+<h3 class="font-headline-md text-[22px] text-on-surface">ML &amp; Tools</h3>
+</div>
+<div class="space-y-4">
+<div><div class="flex justify-between mb-1"><span class="font-code-md text-code-md text-on-surface">OpenCV</span><span class="font-code-md text-code-md text-tertiary">70%</span></div><div class="h-1.5 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-tertiary to-primary rounded-full w-[70%]"></div></div></div>
+<div><div class="flex justify-between mb-1"><span class="font-code-md text-code-md text-on-surface">TensorFlow</span><span class="font-code-md text-code-md text-tertiary">65%</span></div><div class="h-1.5 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-tertiary to-primary rounded-full w-[65%]"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Writing Section -->
+<section id="writing" class="relative z-10 w-full py-section-padding px-margin-mobile md:px-gutter border-t border-white/5">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 space-y-4">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">/ 03</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Latest Writing</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Published research, occasional thoughts, and more writing on the way.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-6">
+<!-- Article Card 1 - Conference Paper -->
+<article class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 cursor-pointer">
+<div class="flex items-center gap-3 text-on-surface-variant font-code-md text-code-md mb-4">
+<span class="text-secondary">Research</span>
+<span>·</span>
+<span>Accepted for ICIST 2026</span>
+<span>·</span>
+<span>2026</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Accepted Conference Paper</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Paper accepted for ICIST 2026. Final version in progress — presenting later this year.</p>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant inline-flex items-center gap-1">
+Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+</span>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 cursor-pointer opacity-60">
+<div class="flex items-center gap-3 text-on-surface-variant font-code-md text-code-md mb-4">
+<span class="text-secondary">Coming Soon</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">More Writing on the Way</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">I'm working on more articles about software engineering, system design, and the things I'm learning. Stay tuned.</p>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant inline-flex items-center gap-1">
+Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+</span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="relative z-10 w-full py-section-padding px-margin-mobile md:px-gutter border-t border-white/5">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 space-y-4">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">/ 04</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">About Me</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Software Systems student, builder, lifelong learner.</p>
+</div>
+<div class="grid md:grid-cols-5 gap-8">
+<div class="md:col-span-3 space-y-6">
+<div class="glass-panel rounded-xl p-6 md:p-8">
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed mb-6">
+                        I'm a <span class="text-primary">Software Systems student at Kaunas University of Technology</span> in Kaunas, passionate about building software that makes a difference. My journey started with curiosity about how things work under the hood — and it's led me from backend engineering to full-stack development.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+                        I was a backend engineering intern at Lithuanian Energy Institute (LEI), where I worked with FastAPI to build internal systems. Now I'm a full-stack intern at Eneba, working across the stack with modern tools and technologies.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        When I'm not coding, I'm exploring machine learning with TensorFlow and OpenCV, tinkering with side projects, or diving into a good book. Always learning, always building.
+                    </p>
+</div>
+<div class="glass-panel rounded-xl p-6 md:p-8">
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4">Experience</h4>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
+<div>
+<p class="font-headline-md text-[18px] text-on-surface">Full-Stack Intern</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Eneba · Present</p>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-1">Working across the stack on real-world e-commerce systems. Building features, fixing bugs, and learning production engineering.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0"></div>
+<div>
+<p class="font-headline-md text-[18px] text-on-surface">Backend Engineering Intern</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Lithuanian Energy Institute (LEI) · 2026</p>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-1">Built internal backend systems with FastAPI. Gained hands-on experience with Python web development and API design.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-2 h-2 rounded-full bg-tertiary mt-2 shrink-0"></div>
+<div>
+<p class="font-headline-md text-[18px] text-on-surface">Software Systems Student</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Kaunas University of Technology · 2022 — Present</p>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-1">Studying software systems, building projects, and exploring machine learning, web development, and software engineering.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 space-y-6">
+<div class="glass-panel rounded-xl p-6 md:p-8">
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4">Quick Facts</h4>
+<div class="space-y-3">
+<div class="flex justify-between py-2 border-b border-white/5"><span class="font-code-md text-code-md text-on-surface-variant">Location</span><span class="font-body-md text-body-md text-on-surface">Kaunas, Lithuania</span></div>
+<div class="flex justify-between py-2 border-b border-white/5"><span class="font-code-md text-code-md text-on-surface-variant">University</span><span class="font-body-md text-body-md text-on-surface">Kaunas University of Technology</span></div>
+<div class="flex justify-between py-2 border-b border-white/5"><span class="font-code-md text-code-md text-on-surface-variant">Focus</span><span class="font-body-md text-body-md text-on-surface">Full-Stack &amp; ML</span></div>
+<div class="flex justify-between py-2 border-b border-white/5"><span class="font-code-md text-code-md text-on-surface-variant">Interests</span><span class="font-body-md text-body-md text-on-surface">Code, Books, Tech</span></div>
+<div class="flex justify-between py-2"><span class="font-code-md text-code-md text-on-surface-variant">Open Source</span><span class="font-body-md text-body-md text-on-surface">GitHub</span></div>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-6 md:p-8">
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4">Get In Touch</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Always open to new opportunities and interesting conversations.</p>
+<div class="space-y-3">
+<a href="mailto:mariusvarna7@gmail.com" class="flex items-center gap-3 p-3 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors group">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">mariusvarna7@gmail.com</span>
+</a>
+<a href="https://github.com/MariusVarna" target="_blank" class="flex items-center gap-3 p-3 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors group">
+<svg class="w-5 h-5 text-secondary" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-secondary transition-colors">/MariusVarna</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-background border-t border-white/5 py-section-padding px-margin-mobile md:px-gutter z-10 relative">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto w-full gap-8">
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tighter">
+                Marius Varna
+            </div>
+<div class="flex items-center gap-6 font-label-sm text-label-sm">
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors hover:-translate-y-[2px] transform duration-300" href="#projects">Projects</a>
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors hover:-translate-y-[2px] transform duration-300" href="#stack">Stack</a>
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors hover:-translate-y-[2px] transform duration-300" href="#writing">Writing</a>
+<a class="text-on-surface-variant hover:text-secondary-container transition-colors hover:-translate-y-[2px] transform duration-300" href="#about">About</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">
+                © 2026 Marius Varna. Built with precision.
+            </div>
+</div>
+</footer>
+<script>
+    // Interactive Background
+    const mainArea = document.getElementById('main-canvas');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+        mainArea.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+            document.documentElement.style.setProperty('--mouse-x', `${xAxis}deg`);
+            document.documentElement.style.setProperty('--mouse-y', `${-yAxis}deg`);
+        });
+
+        mainArea.addEventListener('mouseleave', () => {
+            document.documentElement.style.setProperty('--mouse-x', `0deg`);
+            document.documentElement.style.setProperty('--mouse-y', `0deg`);
+        });
+
+        // Simple Particle System implementation
+        const canvas = document.createElement('canvas');
+        document.getElementById('particles-js').appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let w, h;
+
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = document.getElementById('main-canvas').offsetHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * w;
+                this.y = Math.random() * h;
+                this.size = Math.random() * 2;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.opacity = Math.random() * 0.5 + 0.1;
+                this.color = Math.random() > 0.5 ? '192, 193, 255' : '93, 230, 255'; // primary or secondary
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > w) this.x = 0;
+                if (this.x < 0) this.x = w;
+                if (this.y > h) this.y = 0;
+                if (this.y < 0) this.y = h;
+            }
+            draw() {
+                ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            let numParticles = Math.min(window.innerWidth / 10, 100);
+            for (let i = 0; i < numParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, w, h);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+    }
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+</body></html>
