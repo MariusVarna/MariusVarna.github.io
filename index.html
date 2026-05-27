@@ -1160,7 +1160,6 @@ Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty<
         });
     }
 
-    // Blueprint overlay + easter egg
     const overlay = document.getElementById('blueprintOverlay');
     const glitchTear = document.getElementById('glitchTear');
     const logoLink = document.querySelector('a[href="#hero"]');
@@ -1168,20 +1167,14 @@ Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty<
     let clickTimes = [];
     let easterEggTriggered = false;
 
-    function showOverlay(withGlitch) {
-        if (withGlitch) {
-            glitchTear.classList.add('active');
-            setTimeout(() => {
-                glitchTear.classList.remove('active');
-                overlay.classList.add('show');
-                overlayOpen = true;
-                document.body.style.overflow = 'hidden';
-            }, 450);
-        } else {
+    function showOverlay() {
+        glitchTear.classList.add('active');
+        setTimeout(() => {
+            glitchTear.classList.remove('active');
             overlay.classList.add('show');
             overlayOpen = true;
             document.body.style.overflow = 'hidden';
-        }
+        }, 450);
     }
 
     function hideOverlay() {
@@ -1196,11 +1189,17 @@ Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty<
     logoLink.addEventListener('click', (e) => {
         e.preventDefault();
 
+        if (overlayOpen) {
+            hideOverlay();
+            return;
+        }
+
         const now = Date.now();
         clickTimes.push(now);
         clickTimes = clickTimes.filter(t => now - t < 3000);
+        const count = clickTimes.length;
 
-        if (clickTimes.length >= 5 && !easterEggTriggered) {
+        if (count >= 5 && !easterEggTriggered) {
             easterEggTriggered = true;
             clickTimes = [];
             glitchTear.classList.add('active');
@@ -1223,10 +1222,8 @@ Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty<
             return;
         }
 
-        if (overlayOpen) {
-            hideOverlay();
-        } else {
-            showOverlay(true);
+        if (count === 3) {
+            showOverlay();
         }
     });
 
