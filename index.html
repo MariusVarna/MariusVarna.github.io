@@ -308,9 +308,41 @@
             display: inline-block;
             width: max-content;
         }
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            transition: width 0.2s, height 0.2s, background 0.2s, border-color 0.2s;
+        }
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #c0c1ff;
+            box-shadow: 0 0 10px rgba(192, 193, 255, 0.8), 0 0 20px rgba(192, 193, 255, 0.4);
+        }
+        .cursor-ring {
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid rgba(93, 230, 255, 0.6);
+            box-shadow: 0 0 15px rgba(93, 230, 255, 0.2), inset 0 0 15px rgba(93, 230, 255, 0.05);
+            transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cursor-ring.hover {
+            width: 60px;
+            height: 60px;
+            border-color: rgba(192, 193, 255, 0.8);
+            box-shadow: 0 0 30px rgba(192, 193, 255, 0.3), inset 0 0 20px rgba(192, 193, 255, 0.1);
+        }
+        @media (hover: none) and (pointer: coarse) {
+            .custom-cursor { display: none; }
+        }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container" style="cursor: none">
+<div class="custom-cursor cursor-dot" id="cursorDot"></div>
+<div class="custom-cursor cursor-ring" id="cursorRing"></div>
 <!-- Top Loading Bar -->
 <div class="fixed top-0 left-0 h-1 bg-secondary z-[60] w-full origin-left animate-load-bar shadow-[0_0_10px_#5de6ff]"></div>
 <!-- TopNavBar -->
@@ -802,5 +834,35 @@ Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty<
             }
         });
     });
+
+    // Custom cursor
+    const prefersTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (!prefersTouch && !prefersReducedMotion) {
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let mouseX = 0, mouseY = 0;
+        let ringX = 0, ringY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            dot.style.left = mouseX + 'px';
+            dot.style.top = mouseY + 'px';
+        });
+
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.15;
+            ringY += (mouseY - ringY) * 0.15;
+            ring.style.left = ringX + 'px';
+            ring.style.top = ringY + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        document.querySelectorAll('a, button, [role="button"]').forEach(el => {
+            el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+            el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+        });
+    }
 </script>
 </body></html>
