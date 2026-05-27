@@ -324,7 +324,14 @@
             .custom-cursor { display: none; }
             * { cursor: auto !important; }
         }
-    </style>
+
+        .nav-link.active {
+            color: #c0c1ff;
+        }
+        .nav-link.active::before,
+        .nav-link.active::after {
+            opacity: 0 !important;
+        }    </style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
 <div class="custom-cursor cursor-dot" id="cursorDot"></div>
@@ -765,6 +772,20 @@ Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty<
             }
         });
     });
+
+    // Nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+                if (active) active.classList.add('active');
+            }
+        });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(s => observer.observe(s));
 
     // Custom cursor
     const prefersTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
