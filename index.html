@@ -335,12 +335,14 @@
             border-color: rgba(192, 193, 255, 0.8);
             box-shadow: 0 0 30px rgba(192, 193, 255, 0.3), inset 0 0 20px rgba(192, 193, 255, 0.1);
         }
+        * { cursor: none !important; }
         @media (hover: none) and (pointer: coarse) {
             .custom-cursor { display: none; }
+            * { cursor: auto !important; }
         }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container" style="cursor: none">
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
 <div class="custom-cursor cursor-dot" id="cursorDot"></div>
 <div class="custom-cursor cursor-ring" id="cursorRing"></div>
 <!-- Top Loading Bar -->
