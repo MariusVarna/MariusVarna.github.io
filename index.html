@@ -392,36 +392,11 @@
         }
         body:has(:focus-visible) .custom-cursor {
             display: none !important;
-        .skip-link {
-            position: fixed;
-            top: 12px;
-            left: 12px;
-            z-index: 10000;
-            padding: 10px 20px;
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(93, 230, 255, 0.3);
-            color: #5de6ff;
-            font-family: 'Space Mono', monospace;
-            font-size: 13px;
-            font-weight: 500;
-            text-decoration: none;
-            border-radius: 4px;
-            transform: translateY(-150%);
-            transition: transform 0.25s ease;
-        }
-        .skip-link:focus {
-            transform: translateY(0);
-            outline: 2px solid #5de6ff;
-            outline-offset: 2px;
-        }
-
         section[id] h2 {
             text-wrap: balance;
         }    </style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
-<a href="#main-canvas" class="skip-link">Skip to main content</a>
 <div class="custom-cursor cursor-dot" id="cursorDot"></div>
 <div class="custom-cursor cursor-ring" id="cursorRing"></div>
 <!-- Top Loading Bar -->
