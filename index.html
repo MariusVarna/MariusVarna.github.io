@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Marius Varna — Portfolio</title>
@@ -47,57 +47,56 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "on-primary": "#1c1917",
-                        "secondary-container": "#fbbf24",
-                        "on-secondary": "#292524",
-                        "on-surface-variant": "#a8a29e",
-                        "tertiary-fixed-dim": "#f59e0b",
-                        "on-primary-fixed": "#1c1917",
-                        "on-primary-fixed-variant": "#292524",
-                        "primary-container": "#fbbf24",
-                        "secondary-fixed": "#fef3c7",
-                        "on-tertiary-fixed": "#1c1917",
-                        "primary": "#f59e0b",
-                        "surface-container": "#1c1917",
+                        "on-primary": "var(--on-primary)",
+                        "secondary-container": "var(--secondary-container)",
+                        "on-secondary": "var(--on-secondary)",
+                        "on-surface-variant": "var(--on-surface-variant)",
+                        "tertiary-fixed-dim": "var(--tertiary)",
+                        "on-primary-fixed": "var(--on-primary)",
+                        "on-primary-fixed-variant": "var(--on-primary)",
+                        "primary-container": "var(--primary-container)",
+                        "secondary-fixed": "var(--secondary)",
+                        "on-tertiary-fixed": "var(--on-tertiary)",
+                        "primary": "var(--primary)",
+                        "surface-container": "var(--surface-container)",
                         "on-error": "#690005",
-                        "surface-bright": "#292524",
-                        "inverse-surface": "#fafaf9",
-                        "background": "#0a0a0a",
-                        "secondary-fixed-dim": "#fde68a",
-                        "surface-container-highest": "#292524",
-                        "on-surface": "#fafaf9",
-                        "surface-tint": "#f59e0b",
-                        "inverse-primary": "#d97706",
-                        "on-secondary-fixed-variant": "#1c1917",
-                        "primary-fixed-dim": "#f59e0b",
-                        "on-primary-container": "#1c1917",
+                        "surface-bright": "var(--surface-bright)",
+                        "inverse-surface": "var(--surface)",
+                        "background": "var(--bg)",
+                        "secondary-fixed-dim": "var(--secondary)",
+                        "surface-container-highest": "var(--surface-container-highest)",
+                        "on-surface": "var(--on-surface)",
+                        "surface-tint": "var(--primary)",
+                        "inverse-primary": "var(--tertiary)",
+                        "on-secondary-fixed-variant": "var(--on-secondary)",
+                        "primary-fixed-dim": "var(--primary)",
+                        "on-primary-container": "var(--on-primary-container)",
                         "on-error-container": "#ffdad6",
-                        "on-secondary-container": "#1c1917",
-                        "primary-fixed": "#fde68a",
-                        "surface-container-low": "#171412",
-                        "on-background": "#fafaf9",
-                        "inverse-on-surface": "#292524",
-                        "surface": "#0a0a0a",
-                        "outline": "#78716c",
+                        "on-secondary-container": "var(--on-secondary-container)",
+                        "primary-fixed": "var(--primary)",
+                        "surface-container-low": "var(--surface-container-low)",
+                        "on-background": "var(--on-bg)",
+                        "inverse-on-surface": "var(--on-surface)",
+                        "surface": "var(--surface)",
+                        "outline": "var(--outline)",
                         "error-container": "#93000a",
-                        "on-secondary-fixed": "#292524",
-                        "outline-variant": "#44403c",
-                        "surface-variant": "#292524",
-                        "on-tertiary-container": "#1c1917",
-                        "tertiary-fixed": "#fbbf24",
-                        "secondary": "#fde68a",
-                        "surface-dim": "#0a0a0a",
-                        "tertiary-container": "#f59e0b",
-                        "surface-container-lowest": "#050505",
-                        "tertiary": "#d97706",
-                        "on-tertiary": "#ffffff",
-                        "on-tertiary-fixed-variant": "#292524",
+                        "on-secondary-fixed": "var(--on-secondary)",
+                        "outline-variant": "var(--outline-variant)",
+                        "surface-variant": "var(--surface-variant)",
+                        "on-tertiary-container": "var(--on-tertiary-container)",
+                        "tertiary-fixed": "var(--tertiary)",
+                        "secondary": "var(--secondary)",
+                        "surface-dim": "var(--surface-dim)",
+                        "tertiary-container": "var(--tertiary-container)",
+                        "surface-container-lowest": "var(--surface-container-lowest)",
+                        "tertiary": "var(--tertiary)",
+                        "on-tertiary": "var(--on-tertiary)",
+                        "on-tertiary-fixed-variant": "var(--on-tertiary)",
                         "error": "#ffb4ab",
-                        "surface-container-high": "#292524"
+                        "surface-container-high": "var(--surface-container-high)"
                     },
                     borderRadius: {
                         "DEFAULT": "0.25rem",
@@ -172,6 +171,83 @@
         :root {
             --mouse-x: 0deg;
             --mouse-y: 0deg;
+
+            --bg: #0a0a0a;
+            --on-bg: #fafaf9;
+            --surface: #0a0a0a;
+            --surface-dim: #0a0a0a;
+            --surface-bright: #292524;
+            --surface-container: #1c1917;
+            --surface-container-low: #171412;
+            --surface-container-lowest: #050505;
+            --surface-container-high: #292524;
+            --surface-container-highest: #292524;
+            --surface-variant: #292524;
+            --on-surface: #fafaf9;
+            --on-surface-variant: #a8a29e;
+            --primary: #f59e0b;
+            --on-primary: #1c1917;
+            --primary-container: #fbbf24;
+            --on-primary-container: #1c1917;
+            --secondary: #fde68a;
+            --on-secondary: #292524;
+            --secondary-container: #fbbf24;
+            --on-secondary-container: #1c1917;
+            --tertiary: #d97706;
+            --on-tertiary: #ffffff;
+            --tertiary-container: #f59e0b;
+            --on-tertiary-container: #1c1917;
+            --outline: #78716c;
+            --outline-variant: #44403c;
+            --glass-bg: rgba(28, 25, 23, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glow-color: rgba(245, 158, 11, 0.15);
+            --glow-from: rgba(10, 10, 10, 0);
+            --laser-bg: rgba(10, 10, 10, 0.8);
+            --grid-color: rgba(255, 255, 255, 0.05);
+            --toolbox-bg: rgba(10, 10, 10, 0.5);
+            --scanline-from: rgba(18, 16, 16, 0);
+            --scanline-to: rgba(0, 0, 0, 0.25);
+            --border-color: rgba(255, 255, 255, 0.05);
+        }
+        .light {
+            --bg: #fafaf9;
+            --on-bg: #1c1917;
+            --surface: #fafaf9;
+            --surface-dim: #f5f5f4;
+            --surface-bright: #ffffff;
+            --surface-container: #f5f5f4;
+            --surface-container-low: #ffffff;
+            --surface-container-lowest: #ffffff;
+            --surface-container-high: #e7e5e4;
+            --surface-container-highest: #e7e5e4;
+            --surface-variant: #e7e5e4;
+            --on-surface: #1c1917;
+            --on-surface-variant: #78716c;
+            --primary: #b45309;
+            --on-primary: #ffffff;
+            --primary-container: #fde68a;
+            --on-primary-container: #78350f;
+            --secondary: #d97706;
+            --on-secondary: #ffffff;
+            --secondary-container: #fef3c7;
+            --on-secondary-container: #451a03;
+            --tertiary: #92400e;
+            --on-tertiary: #ffffff;
+            --tertiary-container: #fbbf24;
+            --on-tertiary-container: #1c1917;
+            --outline: #a8a29e;
+            --outline-variant: #d6d3d1;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(0, 0, 0, 0.06);
+            --glow-color: rgba(180, 83, 9, 0.1);
+            --glow-from: rgba(255, 255, 255, 0);
+            --laser-bg: rgba(255, 255, 255, 0.8);
+            --grid-color: rgba(0, 0, 0, 0.04);
+            --toolbox-bg: rgba(255, 255, 255, 0.5);
+            --scanline-from: rgba(255, 255, 255, 0);
+            --scanline-to: rgba(0, 0, 0, 0.08);
+            --border-color: rgba(0, 0, 0, 0.08);
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -181,7 +257,7 @@
                 transition-duration: 0.01ms !important;
                 scroll-behavior: auto !important;
             }
-            .interactive-bg, .particles {
+            .interactive-bg, .particles, .reveal {
                 display: none !important;
             }
         }
@@ -191,12 +267,16 @@
         }
 
         .glass-panel {
-            background: rgba(28, 25, 23, 0.7);
+            background: var(--glass-bg);
             backdrop-filter: blur(12px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-            border-right: 1px solid rgba(255, 255, 255, 0.02);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--glass-border);
+            border-left: 1px solid var(--glass-border);
+            border-right: 1px solid rgba(0, 0, 0, 0.02);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+        }
+        .light .glass-panel {
+            border-right: 1px solid rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
         }
         
         .interactive-bg {
@@ -206,8 +286,8 @@
             height: 140%;
             background-size: 50px 50px;
             background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
             transform-style: preserve-3d;
             transform: perspective(1000px) rotateX(var(--mouse-y)) rotateY(var(--mouse-x));
             transition: transform 0.1s ease-out;
@@ -221,7 +301,7 @@
             position: absolute;
             width: 60vw;
             height: 60vh;
-            background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(10, 10, 10, 0) 70%);
+            background: radial-gradient(circle, var(--glow-color) 0%, var(--glow-from) 70%);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -250,7 +330,7 @@
             left: 0;
             bottom: 0;
             right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background: linear-gradient(var(--scanline-from) 50%, var(--scanline-to) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
             z-index: 2;
             background-size: 100% 4px, 3px 100%;
             pointer-events: none;
@@ -269,6 +349,7 @@
             height: 100%;
             opacity: 0;
             transition: opacity 0.2s ease;
+            pointer-events: none;
         }
         .glitch-link:hover::before {
             left: 2px;
@@ -279,7 +360,7 @@
         }
         .glitch-link:hover::after {
             left: -2px;
-            text-shadow: -2px 0 #f59e0b;
+            text-shadow: -2px 0 var(--primary);
             clip: rect(44px, 450px, 56px, 0);
             animation: glitch-anim2 2s infinite linear alternate-reverse;
             opacity: 1;
@@ -304,7 +385,7 @@
 
         .laser-btn {
             position: relative;
-            background: rgba(10, 10, 10, 0.8);
+            background: var(--laser-bg);
             border: 1px solid rgba(245, 158, 11, 0.3);
             box-shadow: inset 0 0 20px rgba(245, 158, 11, 0), 0 0 20px rgba(245, 158, 11, 0);
             transition: box-shadow 0.3s ease, border-color 0.3s ease;
@@ -344,7 +425,7 @@
         .cursor-dot {
             width: 8px;
             height: 8px;
-            background: #f59e0b;
+            background: var(--primary);
             box-shadow: 0 0 10px rgba(245, 158, 11, 0.8), 0 0 20px rgba(245, 158, 11, 0.4);
         }
         .cursor-ring {
@@ -368,33 +449,69 @@
         }
 
         .nav-link.active {
-            color: #f59e0b;
+            color: var(--primary);
         }
         .nav-link.active::before,
         .nav-link.active::after {
             opacity: 0 !important;
         }
 
-        /* Keyboard focus indicators */
         a:focus-visible,
         button:focus-visible,
         .laser-btn:focus-visible,
         [role="button"]:focus-visible {
-            outline: 2px solid #f59e0b;
+            outline: 2px solid var(--primary);
             outline-offset: 4px;
             border-radius: 4px;
             box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
         }
 
-        /* When keyboard-navigating, restore the system cursor */
         body:has(:focus-visible) * {
             cursor: auto !important;
         }
         body:has(:focus-visible) .custom-cursor {
             display: none !important;
+        }
         section[id] h2 {
             text-wrap: balance;
-        }    </style>
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--outline-variant);
+            border-radius: 9999px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--on-surface-variant);
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+        .theme-toggle:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Scroll reveals */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+    </style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
 <div class="custom-cursor cursor-dot" id="cursorDot"></div>
@@ -413,9 +530,11 @@
 <a class="nav-link glitch-link text-on-surface-variant hover:text-primary transition-colors duration-200" data-text="Writing" href="#writing">Writing</a>
 <a class="nav-link glitch-link text-on-surface-variant hover:text-primary transition-colors duration-200" data-text="About" href="#about">About</a>
 </div>
-<div class="flex items-center gap-4">
-
-<a href="mailto:mariusvarna7@gmail.com" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm hover:bg-primary transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(251,191,36,0.4)] hover:shadow-[0_0_25px_rgba(251,191,36,0.8)]">
+<div class="flex items-center gap-3">
+<button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span id="themeIcon">🌙</span>
+                </button>
+<a href="mailto:mariusvarna7@gmail.com" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-DEFAULT font-label-sm text-label-sm hover:bg-primary transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(251,191,36,0.4)] hover:shadow-[0_0_25px rgba(251,191,36,0.8)]">
                     Contact Me
                 </a>
 </div>
@@ -431,7 +550,7 @@
 </div>
 <!-- Hero Section -->
 <section id="hero" class="relative z-10 w-full pt-16 md:pt-32 pb-section-padding px-margin-mobile md:px-gutter flex flex-col items-center justify-center text-center min-h-[819px]">
-<div class="max-w-4xl mx-auto space-y-8 flex flex-col items-center">
+<div class="max-w-4xl mx-auto space-y-8 flex flex-col items-center reveal visible">
 <!-- Headline -->
 <h1 class="font-display-lg text-display-lg text-on-surface max-md:font-headline-lg-mobile max-md:text-headline-lg-mobile relative scanlines inline-block px-4">
                     Code. <br/>
@@ -453,7 +572,7 @@
 </section>
 <!-- Trusted By Strip -->
 <section class="relative z-10 w-full border-y border-white/5 bg-surface/50 backdrop-blur-md py-12">
-<div class="max-w-container-max mx-auto flex flex-col items-center space-y-8">
+<div class="max-w-container-max mx-auto flex flex-col items-center space-y-8 reveal">
 <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest px-margin-mobile">My Toolbox</p>
 <div class="w-full marquee-container">
 <div class="marquee-content animate-marquee flex items-center gap-24 opacity-70 hover:opacity-100 transition-opacity duration-300">
@@ -464,14 +583,14 @@
 <!-- Projects Section -->
 <section id="projects" class="relative z-10 w-full py-section-padding px-margin-mobile md:px-gutter">
 <div class="max-w-container-max mx-auto">
-<div class="text-center mb-16 space-y-4">
+<div class="text-center mb-16 space-y-4 reveal">
 <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">/ 01</p>
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Featured Projects</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Live projects and works in progress.</p>
 </div>
 <div class="grid md:grid-cols-2 gap-6">
 <!-- Project Card 1 -->
-<a href="https://odis-demo.vercel.app" target="_blank" class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 block">
+<a href="https://odis-demo.vercel.app" target="_blank" class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 block reveal reveal-delay-1">
 <div class="flex items-start justify-between mb-6">
 <div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center">
 <span class="material-symbols-outlined text-primary-container">biotech</span>
@@ -493,7 +612,7 @@
 </div>
 </a>
 <!-- timer -->
-<a href="https://github.com/MariusVarna/timers" target="_blank" class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 block">
+<a href="https://github.com/MariusVarna/timers" target="_blank" class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 block reveal reveal-delay-2">
 <div class="flex items-start justify-between mb-6">
 <div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center">
 <span class="material-symbols-outlined text-secondary-container">timer</span>
@@ -520,14 +639,14 @@
 <!-- Stack Section -->
 <section id="stack" class="relative z-10 w-full py-section-padding px-margin-mobile md:px-gutter border-t border-white/5">
 <div class="max-w-container-max mx-auto">
-<div class="text-center mb-16 space-y-4">
+<div class="text-center mb-16 space-y-4 reveal">
 <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">/ 02</p>
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Tech Stack</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">The tools and technologies I reach for to ship reliable, performant software.</p>
 </div>
 <div class="grid md:grid-cols-3 gap-6">
 <!-- Frontend -->
-<div class="glass-panel rounded-xl p-6 md:p-8">
+<div class="glass-panel rounded-xl p-6 md:p-8 reveal reveal-delay-1">
 <div class="flex items-center gap-3 mb-6">
 <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
 <span class="material-symbols-outlined text-primary">code</span>
@@ -543,7 +662,7 @@
             </div>
 </div>
 <!-- Backend -->
-<div class="glass-panel rounded-xl p-6 md:p-8">
+<div class="glass-panel rounded-xl p-6 md:p-8 reveal reveal-delay-2">
 <div class="flex items-center gap-3 mb-6">
 <div class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center">
 <span class="material-symbols-outlined text-secondary">dns</span>
@@ -560,7 +679,7 @@
             </div>
 </div>
 <!-- ML / Tools -->
-<div class="glass-panel rounded-xl p-6 md:p-8">
+<div class="glass-panel rounded-xl p-6 md:p-8 reveal reveal-delay-3">
 <div class="flex items-center gap-3 mb-6">
 <div class="w-10 h-10 rounded-lg bg-tertiary/20 flex items-center justify-center">
 <span class="material-symbols-outlined text-tertiary">neurology</span>
@@ -580,14 +699,14 @@
 <!-- Writing Section -->
 <section id="writing" class="relative z-10 w-full py-section-padding px-margin-mobile md:px-gutter border-t border-white/5">
 <div class="max-w-container-max mx-auto">
-<div class="text-center mb-16 space-y-4">
+<div class="text-center mb-16 space-y-4 reveal">
 <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">/ 03</p>
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Latest Writing</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Published research, occasional thoughts, and more writing on the way.</p>
 </div>
 <div class="grid md:grid-cols-2 gap-6">
 <!-- Article Card 1 - Conference Paper -->
-<article class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 cursor-pointer">
+<article class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 cursor-pointer reveal reveal-delay-1">
 <div class="flex items-center gap-3 text-on-surface-variant font-code-md text-code-md mb-4">
 <span class="text-secondary">Conference Paper</span>
 <span>·</span>
@@ -601,7 +720,7 @@
 </div>
 </article>
 <!-- Article Card 2 -->
-<article class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 cursor-pointer opacity-60">
+<article class="glass-panel rounded-xl p-6 md:p-8 group hover:bg-surface-container/80 transition-all duration-500 hover:-translate-y-1 cursor-pointer opacity-60 reveal reveal-delay-2">
 <div class="flex items-center gap-3 text-on-surface-variant font-code-md text-code-md mb-4">
 <span class="text-secondary">Coming Soon</span>
 </div>
@@ -619,7 +738,7 @@ Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty<
 <!-- About Section -->
 <section id="about" class="relative z-10 w-full py-section-padding px-margin-mobile md:px-gutter border-t border-white/5">
 <div class="max-w-container-max mx-auto">
-<div class="text-center mb-16 space-y-4">
+<div class="text-center mb-16 space-y-4 reveal">
 <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">/ 04</p>
 <h2 class="font-headline-lg text-headline-lg text-on-surface">About Me</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Software Systems student, builder, lifelong learner.</p>
@@ -719,160 +838,235 @@ Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty<
 </div>
 </footer>
 <script>
-    // Interactive Background
-    const mainArea = document.getElementById('main-canvas');
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var mainArea = document.getElementById('main-canvas');
 
     if (!prefersReducedMotion) {
-        mainArea.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
-            document.documentElement.style.setProperty('--mouse-x', `${xAxis}deg`);
-            document.documentElement.style.setProperty('--mouse-y', `${-yAxis}deg`);
+        mainArea.addEventListener('mousemove', function(e) {
+            var xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+            var yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+            document.documentElement.style.setProperty('--mouse-x', xAxis + 'deg');
+            document.documentElement.style.setProperty('--mouse-y', (-yAxis) + 'deg');
+        });
+        mainArea.addEventListener('mouseleave', function() {
+            document.documentElement.style.setProperty('--mouse-x', '0deg');
+            document.documentElement.style.setProperty('--mouse-y', '0deg');
         });
 
-        mainArea.addEventListener('mouseleave', () => {
-            document.documentElement.style.setProperty('--mouse-x', `0deg`);
-            document.documentElement.style.setProperty('--mouse-y', `0deg`);
-        });
-
-        // Simple Particle System implementation
-        const canvas = document.createElement('canvas');
+        var canvas = document.createElement('canvas');
         document.getElementById('particles-js').appendChild(canvas);
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        let w, h;
+        var ctx = canvas.getContext('2d');
+        var particles = [];
+        var w, h;
 
         function resize() {
             w = canvas.width = window.innerWidth;
             h = canvas.height = document.getElementById('main-canvas').offsetHeight;
         }
-
         window.addEventListener('resize', resize);
         resize();
 
-        class Particle {
-            constructor() {
-                this.x = Math.random() * w;
-                this.y = Math.random() * h;
-                this.size = Math.random() * 2;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
-                this.opacity = Math.random() * 0.5 + 0.1;
-                this.color = Math.random() > 0.5 ? '245, 158, 11' : '253, 230, 138'; // primary or secondary
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x > w) this.x = 0;
-                if (this.x < 0) this.x = w;
-                if (this.y > h) this.y = 0;
-                if (this.y < 0) this.y = h;
-            }
-            draw() {
-                ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
+        function Particle() {
+            this.x = Math.random() * w;
+            this.y = Math.random() * h;
+            this.size = Math.random() * 2;
+            this.speedX = Math.random() * 0.5 - 0.25;
+            this.speedY = Math.random() * 0.5 - 0.25;
+            this.opacity = Math.random() * 0.5 + 0.1;
+            this.color = Math.random() > 0.5 ? '245, 158, 11' : '253, 230, 138';
         }
+        Particle.prototype.update = function() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.x > w) this.x = 0;
+            if (this.x < 0) this.x = w;
+            if (this.y > h) this.y = 0;
+            if (this.y < 0) this.y = h;
+        };
+        Particle.prototype.draw = function() {
+            ctx.fillStyle = 'rgba(' + this.color + ', ' + this.opacity + ')';
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        };
 
         function initParticles() {
             particles = [];
-            let numParticles = Math.min(window.innerWidth / 10, 100);
-            for (let i = 0; i < numParticles; i++) {
-                particles.push(new Particle());
-            }
+            var numParticles = Math.min(window.innerWidth / 10, 100);
+            for (var i = 0; i < numParticles; i++) particles.push(new Particle());
         }
-
         function animateParticles() {
             ctx.clearRect(0, 0, w, h);
-            for (let i = 0; i < particles.length; i++) {
+            for (var i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].draw();
             }
             requestAnimationFrame(animateParticles);
         }
-
         initParticles();
         animateParticles();
     }
 
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', (e) => {
+    // -- Smooth scroll for nav links --
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(link.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            var target = document.querySelector(link.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 
-    // Nav highlight on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    // -- Nav highlight on scroll --
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.nav-link');
+    var navObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+                navLinks.forEach(function(l) { l.classList.remove('active'); });
+                var active = document.querySelector('.nav-link[href="#' + entry.target.id + '"]');
                 if (active) active.classList.add('active');
             }
         });
     }, { rootMargin: '-40% 0px -55% 0px' });
-    sections.forEach(s => observer.observe(s));
+    sections.forEach(function(s) { navObserver.observe(s); });
 
-    // Custom cursor
-    const prefersTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    // -- Custom cursor (with scroll pulse) --
+    var prefersTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
     if (!prefersTouch && !prefersReducedMotion) {
-        const dot = document.getElementById('cursorDot');
-        const ring = document.getElementById('cursorRing');
-        let mouseX = 0, mouseY = 0;
-        let ringX = 0, ringY = 0;
+        var dot = document.getElementById('cursorDot');
+        var ring = document.getElementById('cursorRing');
+        var mouseX = 0, mouseY = 0;
+        var ringX = 0, ringY = 0;
+        var ringScale = 1;
+        var targetScale = 1;
+        var lastScrollY = window.scrollY;
+        var scrollTimeout;
 
-        document.addEventListener('mousemove', (e) => {
+        document.addEventListener('mousemove', function(e) {
             mouseX = e.clientX;
             mouseY = e.clientY;
             dot.style.left = mouseX + 'px';
             dot.style.top = mouseY + 'px';
         });
 
+        window.addEventListener('scroll', function() {
+            var scrollSpeed = Math.abs(window.scrollY - lastScrollY);
+            lastScrollY = window.scrollY;
+            if (scrollSpeed > 20) {
+                targetScale = 1 + Math.min(scrollSpeed / 500, 0.6);
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(function() { targetScale = 1; }, 150);
+            }
+        });
+
         function animateRing() {
             ringX += (mouseX - ringX) * 0.15;
             ringY += (mouseY - ringY) * 0.15;
+            ringScale += (targetScale - ringScale) * 0.15;
             ring.style.left = ringX + 'px';
             ring.style.top = ringY + 'px';
+            var baseSize = 40;
+            var scaled = baseSize * ringScale;
+            ring.style.width = scaled + 'px';
+            ring.style.height = scaled + 'px';
+            ring.style.borderRadius = '50%';
             requestAnimationFrame(animateRing);
         }
         animateRing();
 
-        document.querySelectorAll('a, button, [role="button"]').forEach(el => {
-            el.addEventListener('mouseenter', () => ring.classList.add('hover'));
-            el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+        document.querySelectorAll('a, button, [role="button"]').forEach(function(el) {
+            el.addEventListener('mouseenter', function() { ring.classList.add('hover'); });
+            el.addEventListener('mouseleave', function() { ring.classList.remove('hover'); });
         });
 
-        // Magnetic tilt for laser buttons
-        document.querySelectorAll('.laser-btn').forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                const rect = btn.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = ((y - centerY) / centerY) * -6;
-                const rotateY = ((x - centerX) / centerX) * 6;
-                btn.style.transform = `perspective(400px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+        document.querySelectorAll('.laser-btn').forEach(function(btn) {
+            btn.addEventListener('mousemove', function(e) {
+                var rect = btn.getBoundingClientRect();
+                var x = e.clientX - rect.left;
+                var y = e.clientY - rect.top;
+                var centerX = rect.width / 2;
+                var centerY = rect.height / 2;
+                var rotateX = ((y - centerY) / centerY) * -6;
+                var rotateY = ((x - centerX) / centerX) * 6;
+                btn.style.transform = 'perspective(400px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-2px)';
             });
-            btn.addEventListener('mouseleave', () => {
+            btn.addEventListener('mouseleave', function() {
                 btn.style.transform = 'perspective(400px) rotateX(0deg) rotateY(0deg) translateY(0px)';
             });
         });
     }
 
-    // Marquee: tech list, rendered once and cloned for seamless scroll
+    // -- Scroll-triggered reveals --
     (function() {
-        const techs = [
+        if (prefersReducedMotion) return;
+        var revealEls = document.querySelectorAll('.reveal:not(.visible)');
+        var revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function(el) { revealObserver.observe(el); });
+    })();
+
+    // -- Theme toggle --
+    (function() {
+        var html = document.documentElement;
+        var toggle = document.getElementById('themeToggle');
+        var icon = document.getElementById('themeIcon');
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light') html.classList.add('light');
+        else if (saved === 'dark') html.classList.remove('light');
+        else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            html.classList.add('light');
+            localStorage.setItem('theme', 'light');
+        } else {
+            localStorage.setItem('theme', 'dark');
+        }
+        icon.textContent = html.classList.contains('light') ? '☀️' : '🌙';
+        toggle.addEventListener('click', function() {
+            html.classList.toggle('light');
+            var theme = html.classList.contains('light') ? 'light' : 'dark';
+            icon.textContent = theme === 'light' ? '☀️' : '🌙';
+            localStorage.setItem('theme', theme);
+        });
+    })();
+
+    // -- Vim mode (j/k navigation) --
+    (function() {
+        var sections = ['#hero', '#projects', '#stack', '#writing', '#about'];
+        document.addEventListener('keydown', function(e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+            if (e.key === 'j') {
+                e.preventDefault();
+                var current = sections.indexOf('#' + getCurrentSection());
+                var next = Math.min(current + 1, sections.length - 1);
+                document.querySelector(sections[next]).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (e.key === 'k') {
+                e.preventDefault();
+                var current = sections.indexOf('#' + getCurrentSection());
+                var prev = Math.max(current - 1, 0);
+                document.querySelector(sections[prev]).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+        function getCurrentSection() {
+            var closest = 'hero';
+            var minDist = Infinity;
+            sections.forEach(function(s) {
+                var el = document.querySelector(s);
+                if (!el) return;
+                var dist = Math.abs(el.getBoundingClientRect().top);
+                if (dist < minDist) { minDist = dist; closest = s.replace('#', ''); }
+            });
+            return closest;
+        }
+    })();
+
+    // -- Marquee: tech list --
+    (function() {
+        var techs = [
             { icon: 'terminal', text: 'TypeScript', color: 'text-primary', shadow: 'rgba(245,158,11,0.5)' },
             { icon: 'code_blocks', text: 'React', color: 'text-secondary', shadow: 'rgba(253,230,138,0.5)' },
             { icon: 'api', text: 'Express', color: 'text-tertiary', shadow: 'rgba(217,119,6,0.5)' },
@@ -882,24 +1076,22 @@ Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty<
             { icon: 'dns', text: 'GraphQL', color: 'text-secondary', shadow: 'rgba(253,230,138,0.5)' },
             { icon: 'code', text: 'Next.js', color: 'text-primary', shadow: 'rgba(245,158,11,0.5)' },
         ];
-        const floatClasses = ['animate-float-1', 'animate-float-2', 'animate-float-3', 'animate-float-4'];
-        const container = document.querySelector('.marquee-content');
+        var floatClasses = ['animate-float-1', 'animate-float-2', 'animate-float-3', 'animate-float-4'];
+        var container = document.querySelector('.marquee-content');
         if (!container) return;
-        
         function renderItem(tech, i) {
-            const div = document.createElement('div');
+            var div = document.createElement('div');
             div.className = 'flex items-center gap-2 font-headline-md text-headline-md text-on-surface ' + floatClasses[i % floatClasses.length];
-            const icon = document.createElement('span');
+            var icon = document.createElement('span');
             icon.className = 'material-symbols-outlined text-4xl ' + tech.color + ' drop-shadow-[0_0_8px_' + tech.shadow + ']';
             icon.textContent = tech.icon;
             div.appendChild(icon);
-            const label = document.createElement('span');
+            var label = document.createElement('span');
             label.className = 'font-bold';
             label.textContent = tech.text;
             div.appendChild(label);
             return div;
         }
-        
         techs.forEach(function(t, i) { container.appendChild(renderItem(t, i)); });
         techs.forEach(function(t, i) { container.appendChild(renderItem(t, i)); });
     })();
