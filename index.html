@@ -516,6 +516,7 @@
 <body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
 <div class="custom-cursor cursor-dot" id="cursorDot"></div>
 <div class="custom-cursor cursor-ring" id="cursorRing"></div>
+<canvas id="emberTrail" class="fixed inset-0 pointer-events-none z-[9999]"></canvas>
 <!-- Top Loading Bar -->
 <div class="fixed top-0 left-0 h-1 bg-secondary z-[60] w-full origin-left animate-load-bar shadow-[0_0_10px_#fde68a]"></div>
 <!-- TopNavBar -->
@@ -995,6 +996,70 @@ Coming Soon <span class="material-symbols-outlined text-[14px]">hourglass_empty<
             });
         });
     }
+
+    // -- Ember trail --
+    (function() {
+        if (prefersReducedMotion || prefersTouch) return;
+        var canvas = document.getElementById('emberTrail');
+        var ctx = canvas.getContext('2d');
+        var particles = [];
+        var W, H;
+
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        var colors = ['#fde68a', '#fcd34d', '#f59e0b', '#d97706', '#b45309'];
+
+        function spawn(x, y) {
+            for (var i = 0; i < 2; i++) {
+                particles.push({
+                    x: x + (Math.random() - 0.5) * 2,
+                    y: y + (Math.random() - 0.5) * 2,
+                    vx: (Math.random() - 0.5) * 1,
+                    vy: -Math.random() * 1.5 - 0.3,
+                    size: Math.random() * 2.5 + 1,
+                    life: 1,
+                    decay: 0.02 + Math.random() * 0.02,
+                    color: colors[Math.floor(Math.random() * colors.length)]
+                });
+            }
+        }
+
+        var throttle = false;
+        document.addEventListener('mousemove', function(e) {
+            if (throttle) return;
+            throttle = true;
+            spawn(e.clientX, e.clientY);
+            setTimeout(function() { throttle = false; }, 80);
+        });
+
+        function animate() {
+            ctx.clearRect(0, 0, W, H);
+            for (var i = particles.length - 1; i >= 0; i--) {
+                var p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+                p.life -= p.decay;
+                p.size *= 0.99;
+                if (p.life <= 0 || p.size < 0.3) {
+                    particles.splice(i, 1);
+                    continue;
+                }
+                ctx.globalAlpha = p.life;
+                ctx.fillStyle = p.color;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            ctx.globalAlpha = 1;
+            requestAnimationFrame(animate);
+        }
+        animate();
+    })();
 
     // -- Scroll-triggered reveals --
     (function() {
